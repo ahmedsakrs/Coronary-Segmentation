@@ -134,7 +134,7 @@ if __name__ == '__main__':
     flip_prob = args.flip_prob
     rotate_prob = args.rotate_prob
     direct_parameters = args.Direct_parameter
-    epochs=args.epochs
+    epochs = args.epochs
     parameter_record = '%s' % direct_parameters
 
     os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpu_index)
@@ -158,7 +158,7 @@ if __name__ == '__main__':
 
     # 从config.yaml里面读取参数
     with open(r'config/config.yaml') as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
         # patch_type=config['General_parameters'][overlap]
         img_path = config['General_parameters']['data_path']
         csv_path = config['General_parameters']['csv_path']
@@ -229,8 +229,8 @@ if __name__ == '__main__':
 
     # 推断
     print("inference.....")
-    train_set = Data_set(train_data_path, train_label_path,train_enhance_path , transform=None)
-    valid_set = Data_set(valid_data_path, valid_label_path,valid_enhance_path,  transform=None)
+    train_set = Data_set(train_data_path, train_label_path, train_enhance_path, transform=None)
+    valid_set = Data_set(valid_data_path, valid_label_path, valid_enhance_path, transform=None)
     train_infer_loader = DataLoader(train_set, batch_size * 2, shuffle=False, num_workers=8)
     valid_infer_loader = DataLoader(valid_set, batch_size, shuffle=False, num_workers=32)
 
@@ -261,4 +261,4 @@ if __name__ == '__main__':
     record_dice['hd'] = result[:, 2]
     record_dice = pd.DataFrame(record_dice)
     record_dice.to_csv(r'result/Prior_Patch_seg/%s/%s/fold_%d/patch_%d/result.csv' % (
-        coarse_version,  parameter_record, k, p_size), index=False)
+        coarse_version, parameter_record, k, p_size), index=False)
