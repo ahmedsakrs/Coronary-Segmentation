@@ -1,0 +1,7 @@
+General_parameters:
+  lr: 0.001
+  csv_path: data_list/split_1000.csv
+#  csv_path: data_list/split_40.csv
+  data_path: /home/wcb/data_1100/chosen_dia
+  mid_path: intermediate_data
+
