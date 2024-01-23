@@ -126,7 +126,7 @@ def inference(model, criterion, train_loader, valid_loader, opt, device, save_im
 
 def args_input():
     p = argparse.ArgumentParser(description='cmd parameters')
-    p.add_argument('--gpu_index', type=int, default=7)
+    p.add_argument('--gpu_index', type=int, default=0)
     p.add_argument('--config_file', type=str, default='config/config.yaml')
     p.add_argument('--fold', type=int, default=1)
     p.add_argument('--load_num', type=int, default=30)
@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
     # 读取参数配置文件
     with open(config_file) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
         data_path = config['General_parameters']['data_path']
         # epochs = config['General_parameters']['epoch']
         csv_path = config['General_parameters']['csv_path']
