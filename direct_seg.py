@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
     # 从config.yaml里面读取参数
     with open(config_file) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
         learning_rate = config['General_parameters']['lr']
         train_path = config['General_parameters']['data_path']
         valid_path = config['General_parameters']['data_path']
