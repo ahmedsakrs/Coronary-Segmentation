@@ -29,7 +29,7 @@ if __name__ == '__main__':
 
     # 根据预分割进行裁剪
     with open(config_file) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     img_path = config['General_parameters']['data_path']
     csv_path = config['General_parameters']['csv_path']
