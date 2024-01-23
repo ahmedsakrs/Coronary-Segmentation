@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
     # 从config.yaml里面读取参数
     with open(r'config/config.yaml') as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
         img_path = config['General_parameters']['data_path']
         csv_path = config['General_parameters']['csv_path']
         mid_path = config['General_parameters']['mid_path']
