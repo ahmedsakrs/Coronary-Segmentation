@@ -31,7 +31,7 @@ if __name__ == '__main__':
     print('coarse_version: %s || fold: %d' % (coarse_version, k))
 
     with open(r'config/config.yaml') as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     img_path = config['General_parameters']['data_path']
     csv_path = config['General_parameters']['csv_path']
