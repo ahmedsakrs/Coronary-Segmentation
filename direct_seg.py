@@ -109,7 +109,7 @@ def save_picture(pre, affine, img_size, save_name, id):
 
 def args_input():
     p = argparse.ArgumentParser(description='cmd parameters')
-    p.add_argument('--gpu_index', type=int, default=3)
+    p.add_argument('--gpu_index', type=int, default=0)
     p.add_argument('--config_file', type=str, default='config/config.yaml')
     p.add_argument('--fold', type=int, default=1)
     p.add_argument('--load_num', type=int, default=0)
