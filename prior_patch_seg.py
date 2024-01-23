@@ -164,7 +164,7 @@ if __name__ == '__main__':
         csv_path = config['General_parameters']['csv_path']
         mid_path = config['General_parameters']['mid_path']
 
-    patch_path = os.path.join(mid_path, 'Prior_Patches', coarse_version, direct_parameters, 'fold_%d' % k)
+    patch_path = os.path.join(img_path, 'Prior_Patches', coarse_version, direct_parameters, 'fold_%d' % k)
 
     train_data_path = os.path.join(patch_path, 'patch_%d' % p_size, 'train_img_patch')
     train_label_path = os.path.join(patch_path, 'patch_%d' % p_size, 'train_label_patch')
