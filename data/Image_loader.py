@@ -25,8 +25,8 @@ class CoronaryImage(Dataset):
     def __getitem__(self, index):
         image_index = self.ID_list[index]
 
-        image_path = os.path.join(self.data_dir, image_index, 'img.nii.gz')
-        label_path = os.path.join(self.label_dir, image_index, 'label.nii.gz')
+        image_path = os.path.join(self.data_dir, image_index + '.img.nii.gz')
+        label_path = os.path.join(self.label_dir, image_index + '.label.nii.gz')
 
         ID = image_index
 
