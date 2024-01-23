@@ -173,7 +173,7 @@ if __name__ == '__main__':
     device = torch.device("cuda:%d"%gpu_index if torch.cuda.is_available() else "cpu")
 
     with open(r'config/config.yaml') as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
         csv_path = config['General_parameters']['csv_path']
         data_path = config['General_parameters']['data_path']
         mid_path = config['General_parameters']['mid_path']
