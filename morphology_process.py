@@ -65,7 +65,7 @@ if __name__=='__main__':
     pool_num=args.pools
 
     with open(config_file) as f:
-        config = yaml.load(f)
+        config = yaml.full_load(f)
 
     p_path = os.path.join('result/Direct_seg',coarse_version,direct_parameters, 'fold_%d' % k, 'pre_label')
     img_path = config['General_parameters']['data_path']
